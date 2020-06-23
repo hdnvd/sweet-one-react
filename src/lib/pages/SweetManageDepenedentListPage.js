@@ -2,6 +2,10 @@ import * as React from "react";
 import SweetManageListPage from "./SweetManageListPage";
 
 export default class SweetManageDepenedentListPage extends SweetManageListPage {
+    tableClassName='dependentlisttable';
+    getDefaultPageSize(){
+        return 5;
+    }
     getOwnerID(){
         return this.props.ownerID;
     }

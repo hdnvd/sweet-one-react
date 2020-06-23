@@ -1,5 +1,6 @@
 import SweetEntity from "./architecture/SweetEntity";
 import ListPageContainer from './components/ListPageContainer';
+import DependentListPageContainer from './components/DependentListPageContainer';
 import ManagePageContainer from './components/ManagePageContainer';
 import ManagePageFieldsContainer from './components/ManagePageFieldsContainer';
 import ManagePageManagementBar from './components/ManagePageManagementBar';
@@ -22,6 +23,7 @@ import SweetHttpRequest from './classes/sweet-http-request';
 export {
     SweetEntity
     ,ListPageContainer
+    ,DependentListPageContainer
     ,ManagePageContainer
     ,ManagePageFieldsContainer
     ,ManagePageManagementBar

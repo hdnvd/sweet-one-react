@@ -1,7 +1,6 @@
 
 import * as React from "react";
 import {FaEdit, IoMdAddCircle, IoMdEye, MdDeleteForever} from "react-icons/all";
-import Constants from "../classes/Constants";
 import {SweetAlert} from "sweet-react-common-tools";
 import {Link} from "react-router-dom";
 import {SweetTable} from "sweet-react-components";
@@ -10,6 +9,7 @@ import SweetListPage from "./SweetListPage";
 export default class SweetManageListPage extends SweetListPage {
     moduleName=null;
     tableName=null;
+    tableClassName='-striped -highlight';
 
     getAddLink(){
         return '/'+this.moduleName+'/'+this.tableName+'/management';
@@ -26,7 +26,7 @@ export default class SweetManageListPage extends SweetListPage {
             () =>{
                 SweetAlert.displayDeleteAlert(()=>{
                     this.entity.delete(id,()=>{
-                        this.LoadData(Constants.DefaultPageSize,this.state.page+1,null,null);
+                        this.LoadData(this.state.pageSize,this.state.page+1,null,null);
                     },null);
 
                 });
@@ -59,8 +59,8 @@ export default class SweetManageListPage extends SweetListPage {
     getTable(){
         return <SweetTable
             filterable={false}
-            className='-striped -highlight'
-            defaultPageSize={Constants.DefaultPageSize}
+            className={this.tableClassName}
+            defaultPageSize={this.state.pageSize}
             data={this.state.data}
             pages={this.state.pages}
             columns={this.columns}

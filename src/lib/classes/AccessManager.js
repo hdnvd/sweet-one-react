@@ -13,7 +13,7 @@ class AccessManager{
     {
         if(global.ServerMode===Constants.SERVERMODE_LARAVEL) {
             let cookies = new Cookies();
-            console.log(access);
+            // console.log(access);
             ModuleName=ModuleName.toLowerCase();
             TableName=TableName.toLowerCase();
             Action=Action.toLowerCase();
@@ -21,7 +21,7 @@ class AccessManager{
             let access=cookies.get('access.'+ActionString);
             // let hasAccess=false;
 
-            console.log('Checking Access List '+ActionString);
+            // console.log('Checking Access List '+ActionString);
             // console.log(access.length);
             // console.log(Object.keys(access));
             return access!=null;

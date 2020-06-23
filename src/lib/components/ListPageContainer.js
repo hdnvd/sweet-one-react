@@ -7,9 +7,11 @@
 import React from 'react';
 import {MDBCol, MDBContainer, MDBRow} from "mdbreact";
 export default class ListPageContainer extends React.Component {
+    defaultClassName='listpage';
   render() {
+      const className=this.props.className||'';
     return (
-        <div className={'page'}>
+        <div className={'page '+this.defaultClassName+' '+className}>
         <p className='h5 pagetitle'>{this.props.title}</p>
             <div className={'pagecontentcontainer'}>
         <MDBContainer>

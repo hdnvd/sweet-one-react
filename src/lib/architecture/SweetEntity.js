@@ -82,7 +82,7 @@ export default class SweetEntity{
             let fieldName=theField.field;//doc_igu
             const fieldType=this.getFieldType(theField);
             if(fieldType==='file'){
-                if(theObject[fieldName]!=null)
+                if(theObject[fieldName]!=null && theObject[fieldName].trim().length>0)
                     this[DisplayName] = {url:global.SiteURL+"/"+theObject[fieldName]};
                 else
                     this[DisplayName] = {url:null};
